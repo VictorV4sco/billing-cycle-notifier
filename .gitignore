@@ -1,0 +1,49 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local AI/tooling artifacts
+.claude/
+CLAUDE.md
+AGENTS.md
+
+# Java / Spring Boot
+**/target/
+**/build/
+**/.gradle/
+
+# React Native / Expo
+**/node_modules/
+**/.expo/
+**/dist/
+**/web-build/
+**/.kotlin/
+**/.metro-health-check*
+**/expo-env.d.ts
+**/*.tsbuildinfo
+
+# Android / iOS generated files
+**/android/.gradle/
+**/android/app/build/
+**/android/build/
+**/ios/build/
+**/ios/Pods/
+**/*.jks
+**/*.p8
+**/*.p12
+**/*.key
+**/*.mobileprovision
