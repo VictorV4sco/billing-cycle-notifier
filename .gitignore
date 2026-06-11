@@ -6,6 +6,7 @@ Thumbs.db
 .idea/
 .vscode/
 *.iml
+.metadata/
 
 # Logs
 *.log
@@ -15,6 +16,14 @@ logs/
 .env
 .env.*
 !.env.example
+
+# Spring Boot local configuration
+application-local.properties
+application-local.yml
+application-secret.properties
+application-secret.yml
+application-*.local.properties
+application-*.local.yml
 
 # Local AI/tooling artifacts
 .claude/
@@ -40,9 +49,11 @@ AGENTS.md
 **/android/.gradle/
 **/android/app/build/
 **/android/build/
+**/android/local.properties
 **/ios/build/
 **/ios/Pods/
 **/*.jks
+**/*.keystore
 **/*.p8
 **/*.p12
 **/*.key
