@@ -21,6 +21,7 @@ This repository is organized as a simple monorepo:
 - Spring Data JPA
 - MySQL for development
 - H2 for automated tests
+- JaCoCo for test coverage reports
 
 ### Mobile
 
@@ -45,6 +46,15 @@ Status enums were also introduced for the entities that require lifecycle tracki
 - `BillingStatementStatus`
 - `MessageStatus`
 
+The backend also includes an initial repository layer with custom JPQL queries for:
+
+- `User`
+- `Person`
+- `Charge`
+- `BillingStatement`
+- `BillingStatementItem`
+- `Message`
+
 ## Configuration
 
 The backend already supports separated application profiles:
@@ -57,6 +67,27 @@ Sensitive database credentials are not stored in versioned configuration files. 
 
 - `DB_USERNAME`
 - `DB_PASSWORD`
+
+## Testing
+
+The project already includes an initial automated test base for the backend.
+
+Current testing scope:
+
+- context loading test
+- JPA persistence tests for the core entities
+- repository query tests for the current data access layer
+- H2-based test profile for isolated database validation
+- JaCoCo coverage report generation during test execution
+
+Current tested areas:
+
+- entity persistence and relationships
+- default status values
+- automatic timestamps from the base entity
+- `generatedAt` initialization for billing statements
+- unique constraint validation for billing statement cycles
+- repository queries for users, people, charges, billing statements, statement items, and messages
 
 ## Planned Flow
 
@@ -80,10 +111,12 @@ What is already in place:
 - environment-based backend configuration
 - initial domain entity modeling
 - status enums for core domain flows
+- repository layer with custom JPQL queries
+- initial automated persistence and repository tests
+- JaCoCo coverage integration
 
 What is expected next:
 
-- JPA repositories
 - service layer
 - DTOs and validation rules
 - REST endpoints
